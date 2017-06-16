@@ -1,13 +1,20 @@
 #!/usr/bin/python3
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 # constant definition
-FORMULA_STR = "{0:d}x{1:d}={2:2d}"
 MIN_NUM = 1
 MAX_NUM = 9
 
 for row in range(MIN_NUM,MAX_NUM+1):
-    for col in range(MIN_NUM,MAX_NUM):
-        print (FORMULA_STR.format(col,row,row*col), end=" ")
-    print (FORMULA_STR.format(MAX_NUM,row,row*MAX_NUM))
+    for col in range(MIN_NUM,MAX_NUM+1):
+        result = row*col
+        if result < 10:
+            padding = ' '
+        else:
+            padding = ''
+
+        if col != MAX_NUM: separator = ' '
+        else: separator = '\n'
+
+        print (col, 'x', row, '=', padding, result, sep='', end=separator)
 
