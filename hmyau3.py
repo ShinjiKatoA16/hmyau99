@@ -7,7 +7,8 @@ MIN_NUM = 1
 MAX_NUM = 9
 
 for row in range(MIN_NUM,MAX_NUM+1):
-    for col in range(MIN_NUM,MAX_NUM):
-        print (FORMULA_STR.format(col,row,row*col), end=" ")
-    print (FORMULA_STR.format(MAX_NUM,row,row*MAX_NUM))
+    for col in range(MIN_NUM,MAX_NUM+1):
+        if col != MAX_NUM: separator = ' '
+        else: separator = '\n'
+        print (FORMULA_STR.format(col,row,row*col), end=separator)
 
